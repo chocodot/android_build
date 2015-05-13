@@ -67,7 +67,7 @@ HOST_OS_EXTRA:=$(shell python -c "import platform; print(platform.platform())")
 $(info ============================================)
 $(info   PLATFORM_VERSION_CODENAME=$(PLATFORM_VERSION_CODENAME))
 $(info   PLATFORM_VERSION=$(PLATFORM_VERSION))
-$(info   BLISS_VERSION=$(BLISS_VERSION))
+$(info   AUZONE_VERSION=$(Auzone_VERSION))
 $(info   TARGET_PRODUCT=$(TARGET_PRODUCT))
 $(info   TARGET_BUILD_VARIANT=$(TARGET_BUILD_VARIANT))
 $(info   TARGET_BUILD_TYPE=$(TARGET_BUILD_TYPE))
@@ -104,35 +104,35 @@ $(info   HOST_CC=$(HOST_CC))
 $(info   HOST_OUT_EXECUTABLES=$(HOST_OUT_EXECUTABLES))
 $(info   OUT_DIR=$(OUT_DIR))
 
-ifdef BLISSIFY
-$(info   BLISSIFY=$(BLISSIFY))
+ifdef AUZONEIFY
+$(info   AUZONEIFY=$(AUZONEIFY))
 else
-$(info   BLISSIFY=false)
+$(info   AUZONEIFY=false)
 endif
-ifdef BLISS_O3
-$(info   BLISS_O3=$(BLISS_O3))
+ifdef AUZONE_O3
+$(info   AUZONE_O3=$(AUZONE_O3))
 else
-$(info   BLISS_O3=false)
+$(info   AUZONE_O3=false)
 endif
-ifeq (true,$(BLISS_GRAPHITE))
-$(info   BLISS_GRAPHITE=$(BLISS_GRAPHITE))
+ifeq (true,$(AUZONE_GRAPHITE))
+$(info   AUZONE_GRAPHITE=$(AUZONE_GRAPHITE))
 else
-$(info   BLISS_GRAPHITE=false)
+$(info   AUZONE_GRAPHITE=false)
 endif
-ifdef BLISS_STRICT
-$(info   BLISS_STRICT=$(BLISS_STRICT))
+ifdef AUZONE_STRICT
+$(info   AUZONE_STRICT=$(AUZONE_STRICT))
 else
-$(info   BLISS_STRICT=false)
+$(info   AUZONE_STRICT=false)
 endif
-ifdef BLISS_KRAIT
-$(info   BLISS_KRAIT=$(BLISS_KRAIT))
+ifdef AUZONE_KRAIT
+$(info   AUZONE_KRAIT=$(AUZONE_KRAIT))
 else
-$(info   BLISS_KRAIT=false)
+$(info   AUZONE_KRAIT=false)
 endif
-ifdef BLISS_PIPE
-$(info   BLISS_PIPE=$(BLISS_PIPE))
+ifdef AUZONE_PIPE
+$(info   AUZONE_PIPE=$(AUZONE_PIPE))
 else
-$(info   BLISS_PIPE=false)
+$(info   AUZONE_PIPE=false)
 endif
 
 ifneq (,$(GCC_OPTIMIZATION_LEVELS))

@@ -57,7 +57,7 @@ if [ "$TARGET_UNIFIED_DEVICE" == "" ] ; then
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
-#Bliss Properties
-echo "ro.bliss.device=$BLISS_DEVICE"
+#Auzone Properties
+echo "ro.auzone.device=$AUZONE_DEVICE"
 
 echo "# end build properties"

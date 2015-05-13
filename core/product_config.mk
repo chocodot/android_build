@@ -179,9 +179,9 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-# A BLISS build needs only the BLISS product makefiles.
-ifneq ($(BLISS_BUILD),)
-  all_product_configs := $(shell ls device/*/$(BLISS_BUILD)/bliss.mk)
+# A AUZONE build needs only the AUZONE product makefiles.
+ifneq ($(AUZONE_BUILD),)
+  all_product_configs := $(shell ls device/*/$(AUZONE_BUILD)/auzone.mk)
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
@@ -192,9 +192,9 @@ else
     # files in the tree.
     all_product_configs := $(get-all-product-makefiles)
   endif # TARGET_BUILD_APPS
-endif # BLISS_BUILD
+endif # AUZONE_BUILD
 
-ifeq ($(BLISS_BUILD),)
+ifeq ($(AUZONE_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>

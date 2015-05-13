@@ -598,9 +598,9 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.SetPermissionsRecursive("/tmp/install/bin", 0, 0, 0755, 0755, None, None)
 
   script.Print("******************************************");
-  script.Print("*   BlissPop Rom");
+  script.Print("*   AuzonePop Rom");
   script.Print("******************************************");
-  script.Print("*   Created By TeamBliss");
+  script.Print("*   Created By Auzone");
   script.Print("******************************************");    
 
   builddate = GetBuildProp("ro.build.date", OPTIONS.info_dict)
@@ -747,7 +747,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.ShowProgress(0.05, 5)
   script.WriteRawImage("/boot", "boot.img")
 
-  script.Print("{+} Enjoy BlissPop Rom!")
+  script.Print("{+} Enjoy AuzonePop Rom!")
   script.ShowProgress(0.2, 10)
   device_specific.FullOTA_InstallEnd()
 
