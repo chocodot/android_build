@@ -97,6 +97,9 @@ CLANG_CONFIG_UNKNOWN_CFLAGS := \
   -Wno-maybe-uninitialized \
   -Wno-error=maybe-uninitialized \
   -fno-canonical-system-headers \
+  -fmodulo-sched \
+  -fmodulo-sched-allow-regmoves \
+  -mvectorize-with-neon-quad
   -mfpu=neon-vfpv4
 
 
