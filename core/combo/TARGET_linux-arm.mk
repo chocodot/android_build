@@ -111,21 +111,20 @@ $(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += \
 			-I $(dir $(android_config_h))
 
 # More flags/options can be added here
-TARGET_GLOBAL_CFLAGS += \
+$(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += \
 			-DNDEBUG \
 			-Wstrict-aliasing=2 \
 			-fgcse-after-reload \
 			-frerun-cse-after-loop \
-			-frename-registers $(BOARD_GLOBAL_CFLAGS)
+			-frename-registers
 
-# The "-Wunused-but-set-variable" option often breaks projects that enable
-# "-Wall -Werror" due to a commom idiom "ALOGV(mesg)" where ALOGV is turned
-# into no-op in some builds while mesg is defined earlier. So we explicitly
-# disable "-Wunused-but-set-variable" here.
-ifneq ($(filter 4.6 4.6.% 4.7 4.7.% 4.8 4.8.% 4.9 4.9.% 5.0 5.0.% 5.1 5.1.%, $($(combo_2nd_arch_prefix)TARGET_GCC_VERSION)),)
-$(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += -fno-builtin-sin \
-			-fno-strict-volatile-bitfields
-endif
+# arter97
+$(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS += \
+			-w \
+			-O3 \
+			-fno-inline-functions \
+			-funroll-loops \
+			-mvectorize-with-neon-quad
 
 # This is to avoid the dreaded warning compiler message:
 #   note: the mangling of 'va_list' has changed in GCC 4.4
